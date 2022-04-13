@@ -18,18 +18,15 @@ public class Animal extends BaseEntity {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "species")
-    private String species;
+    @Column(name = "type",length = 50)
+    private String type;
 
     @Column(name = "gender")
     @Enumerated(EnumType.ORDINAL)
     private GenderStatus gender;
 
-    @Column(name = "name")
+    @Column(name = "name",length = 50)
     private String name;
-
-    @Column(name = "old")
-    private String old;
 
     @Column(name = "age")
     private int age;
@@ -37,11 +34,13 @@ public class Animal extends BaseEntity {
     @Column(name = "description",length = 400)
     private String description;
 
-    @JoinColumn(name = "assig_user_id")
+    @JoinColumn(name = "assignee_user_id")
     @ManyToOne(optional = true,fetch = FetchType.LAZY)
     private User assignee;
 
-
+    @JoinColumn(name = "customer_id")
+    @ManyToOne(optional = true,fetch = FetchType.LAZY)
+    private Customer customer;
 
 
 }
