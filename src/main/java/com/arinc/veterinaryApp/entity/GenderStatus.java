@@ -1,4 +1,4 @@
-package com.arinc.vetenaryApp.entity;
+package com.arinc.veterinaryApp.entity;
 
 public enum GenderStatus {
     FEMALE,

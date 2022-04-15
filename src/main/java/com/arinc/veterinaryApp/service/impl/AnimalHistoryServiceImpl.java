@@ -1,8 +1,8 @@
-package com.arinc.vetenaryApp.service.impl;
+package com.arinc.veterinaryApp.service.impl;
 
-import com.arinc.vetenaryApp.entity.AnimalHistory;
-import com.arinc.vetenaryApp.repository.AnimalHistoryRepository;
-import com.arinc.vetenaryApp.service.AnimalHistoryService;
+import com.arinc.veterinaryApp.entity.AnimalHistory;
+import com.arinc.veterinaryApp.repository.AnimalHistoryRepository;
+import com.arinc.veterinaryApp.service.AnimalHistoryService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;

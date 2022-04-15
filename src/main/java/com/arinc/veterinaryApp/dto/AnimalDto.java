@@ -1,8 +1,8 @@
-package com.arinc.vetenaryApp.dto;
+package com.arinc.veterinaryApp.dto;
 
-import com.arinc.vetenaryApp.entity.Customer;
-import com.arinc.vetenaryApp.entity.GenderStatus;
-import com.arinc.vetenaryApp.entity.User;
+import com.arinc.veterinaryApp.entity.Customer;
+import com.arinc.veterinaryApp.entity.GenderStatus;
+import com.arinc.veterinaryApp.entity.User;
 import lombok.Data;
 
 @Data

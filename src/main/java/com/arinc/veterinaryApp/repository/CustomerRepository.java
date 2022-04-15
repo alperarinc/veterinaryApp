@@ -1,6 +1,6 @@
-package com.arinc.vetenaryApp.repository;
+package com.arinc.veterinaryApp.repository;
 
-import com.arinc.vetenaryApp.entity.Customer;
+import com.arinc.veterinaryApp.entity.Customer;
 import org.springframework.data.domain.*;
 import org.springframework.data.jpa.repository.JpaRepository;
 
