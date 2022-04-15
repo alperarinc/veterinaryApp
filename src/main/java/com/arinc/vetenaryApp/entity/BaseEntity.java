@@ -8,9 +8,9 @@ import javax.persistence.MappedSuperclass;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import java.io.Serializable;
-import java.sql.Date;
+import java.util.Date;
 
-@MappedSuperclass//Bütün tablolarda ortak olmasını sağlar
+@MappedSuperclass//classları genellikle ortak state ve mapping bilgisi olan entitylerimiz olduğunda kullanırız
 @Getter
 @Setter
 public abstract class BaseEntity implements Serializable {
