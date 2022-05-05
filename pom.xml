@@ -11,8 +11,8 @@
 	<groupId>com.arinc.vetenaryApp</groupId>
 	<artifactId>vetenaryApp</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>vetenaryApp</name>
-	<description>vetenaryApp</description>
+	<name>veterinaryApp</name>
+	<description>veterinaryApp</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
