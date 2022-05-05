@@ -1,10 +1,10 @@
-package com.arinc.vetenaryApp.service.impl;
+package com.arinc.veterinaryApp.service.impl;
 
-import com.arinc.vetenaryApp.dto.AnimalDto;
-import com.arinc.vetenaryApp.entity.Animal;
-import com.arinc.vetenaryApp.repository.AnimalRepository;
-import com.arinc.vetenaryApp.service.AnimalService;
-import com.arinc.vetenaryApp.util.TPage;
+import com.arinc.veterinaryApp.dto.AnimalDto;
+import com.arinc.veterinaryApp.entity.Animal;
+import com.arinc.veterinaryApp.repository.AnimalRepository;
+import com.arinc.veterinaryApp.service.AnimalService;
+import com.arinc.veterinaryApp.util.TPage;
 import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

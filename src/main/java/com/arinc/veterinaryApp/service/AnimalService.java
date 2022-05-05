@@ -1,9 +1,7 @@
-package com.arinc.vetenaryApp.service;
+package com.arinc.veterinaryApp.service;
 
-import com.arinc.vetenaryApp.dto.AnimalDto;
-import com.arinc.vetenaryApp.entity.Animal;
-import com.arinc.vetenaryApp.util.TPage;
-import org.springframework.data.domain.Page;
+import com.arinc.veterinaryApp.dto.AnimalDto;
+import com.arinc.veterinaryApp.util.TPage;
 import org.springframework.data.domain.Pageable;
 
 public interface AnimalService {

@@ -1,6 +1,6 @@
-package com.arinc.vetenaryApp.service;
+package com.arinc.veterinaryApp.service;
 
-import com.arinc.vetenaryApp.entity.AnimalHistory;
+import com.arinc.veterinaryApp.entity.AnimalHistory;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 

@@ -1,8 +1,8 @@
-package com.arinc.vetenaryApp.service.impl;
+package com.arinc.veterinaryApp.service.impl;
 
-import com.arinc.vetenaryApp.entity.Customer;
-import com.arinc.vetenaryApp.repository.CustomerRepository;
-import com.arinc.vetenaryApp.service.CustomerService;
+import com.arinc.veterinaryApp.entity.Customer;
+import com.arinc.veterinaryApp.repository.CustomerRepository;
+import com.arinc.veterinaryApp.service.CustomerService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;

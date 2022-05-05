@@ -1,4 +1,4 @@
-package com.arinc.vetenaryApp.util;
+package com.arinc.veterinaryApp.util;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Sort;

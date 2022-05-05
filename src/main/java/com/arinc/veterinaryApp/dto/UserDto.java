@@ -1,4 +1,4 @@
-package com.arinc.vetenaryApp.dto;
+package com.arinc.veterinaryApp.dto;
 
 public class UserDto {
     private Long id;

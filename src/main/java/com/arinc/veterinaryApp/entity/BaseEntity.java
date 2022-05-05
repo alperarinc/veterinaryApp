@@ -1,4 +1,4 @@
-package com.arinc.vetenaryApp.entity;
+package com.arinc.veterinaryApp.entity;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -10,7 +10,7 @@ import javax.persistence.TemporalType;
 import java.io.Serializable;
 import java.util.Date;
 
-@MappedSuperclass//classları genellikle ortak state ve mapping bilgisi olan entitylerimiz olduğunda kullanırız
+@MappedSuperclass//Bütün tablolarda ortak olmasını sağlar
 @Getter
 @Setter
 public abstract class BaseEntity implements Serializable {
