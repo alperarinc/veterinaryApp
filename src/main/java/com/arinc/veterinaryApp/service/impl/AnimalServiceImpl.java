@@ -26,7 +26,9 @@ public class AnimalServiceImpl implements AnimalService {
     @Override
     public AnimalDto save(AnimalDto animal) {
         if (animal.getName() == null) throw new IllegalArgumentException("Animal name cannot be null");
+
         Animal animaldb = modelMapper.map(animal, Animal.class);
+
         animaldb = animalRepository.save(animaldb);
         return modelMapper.map(animaldb, AnimalDto.class);
     }

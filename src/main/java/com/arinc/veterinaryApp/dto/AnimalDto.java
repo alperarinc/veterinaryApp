@@ -13,6 +13,6 @@ public class AnimalDto {
     private String name;
     private int age;
     private String description;
-    private User assignee;
-    private Customer customer;
+    private UserDto assignee;
+    private CustomerDto customer;
 }

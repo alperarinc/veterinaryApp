@@ -9,14 +9,14 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 public class VeterinaryAppApplication {
 
-	public static void main(String[] args) {
-		ConfigurableApplicationContext run = SpringApplication.run(VeterinaryAppApplication.class, args);
-	}
+    public static void main(String[] args) {
+        ConfigurableApplicationContext run = SpringApplication.run(VeterinaryAppApplication.class, args);
+    }
 
-	@Bean
-	public ModelMapper getModelMapper(){
-		ModelMapper modelMapper = new ModelMapper();
-		return modelMapper;
+    @Bean
+    public ModelMapper getModelMapper() {
+        ModelMapper modelMapper = new ModelMapper();
+        return modelMapper;
 
-	}
+    }
 }
