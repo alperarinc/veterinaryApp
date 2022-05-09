@@ -18,13 +18,12 @@ public class Customer extends BaseEntity{
     private Long id;
 
     @Column(name = "customer_code")
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long customerCode;
+    private String customerCode;
 
-    @Column(name = "name",length = 50)
-    private String name;
+    @Column(name = "customer_name",length = 50)
+    private String customerName;
 
-    @Column(name = "surname",length = 50)
+    @Column(name = "customer_surname",length = 50)
     private String surname;
 
     @Column(name = "tel_number",length = 10,unique = true)
@@ -36,7 +35,7 @@ public class Customer extends BaseEntity{
     @Column(name = "email",length = 50,unique = true)
     private String email;
 
-    @JoinColumn(name = "assignee_user_id")
-    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "manager_user_id")
+    @ManyToOne(optional = true, fetch = FetchType.LAZY)
     private User manager;
 }

@@ -8,9 +8,11 @@ import java.util.List;
 
 public interface CustomerRepository extends JpaRepository<Customer,Long> {
 
-    List<Customer> getByCustomerCode (String customerCode);
+    Customer getByCustomerCode (String customerCode);
 
     List<Customer> getByCustomerCodeContains(String customerCode);
+
+    Customer getByCustomerCodeAndIdNot(String customerCode, Long id);
 
     Page<Customer> findAll(Pageable pageable);
 

@@ -1,6 +1,8 @@
 package com.arinc.veterinaryApp.service;
 
+import com.arinc.veterinaryApp.dto.CustomerDto;
 import com.arinc.veterinaryApp.entity.Customer;
+import com.arinc.veterinaryApp.util.TPage;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
@@ -8,16 +10,18 @@ import java.util.List;
 
 public interface CustomerService {
 
-    Customer save(Customer Customer);
+    CustomerDto save(CustomerDto Customer);
 
-    Customer getById(Long id);
+    CustomerDto getById(Long id);
 
-    List<Customer> getByCustomerCode(String customerCode);
+    CustomerDto getByCustomerCode(String customerCode);
 
     List<Customer> getByCustomerCodeContains(String customerCode);
 
-    Page<Customer> getAllPageable(Pageable pageable);
+    TPage<CustomerDto> getAllPageable(Pageable pageable);
 
-    Boolean delete (Customer customer);
+    Boolean delete (Long id);
+
+    CustomerDto update(Long id, CustomerDto customer);
 
 }
