@@ -50,7 +50,12 @@ public class AnimalServiceImpl implements AnimalService {
     }
 
     @Override
-    public Boolean delete(AnimalDto animal) {
+    public Boolean delete(Long id) {
+        return true;
+    }
+
+    @Override
+    public AnimalDto update(Long id, AnimalDto animal) {
         return null;
     }
 }

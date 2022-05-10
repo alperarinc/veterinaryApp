@@ -1,6 +1,8 @@
 package com.arinc.veterinaryApp.service;
 
 import com.arinc.veterinaryApp.dto.AnimalDto;
+import com.arinc.veterinaryApp.dto.CustomerDto;
+import com.arinc.veterinaryApp.entity.Animal;
 import com.arinc.veterinaryApp.util.TPage;
 import org.springframework.data.domain.Pageable;
 
@@ -12,6 +14,8 @@ public interface AnimalService {
 
     TPage<AnimalDto> getAllPageable(Pageable pageable);
 
-    Boolean delete(AnimalDto animal);
+    Boolean delete(Long id);
+
+    AnimalDto update(Long id, AnimalDto animal);
 
 }

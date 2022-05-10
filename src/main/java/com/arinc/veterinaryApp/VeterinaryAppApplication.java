@@ -1,5 +1,6 @@
 package com.arinc.veterinaryApp;
 
+import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.modelmapper.ModelMapper;
@@ -16,6 +17,7 @@ public class VeterinaryAppApplication {
     @Bean
     public ModelMapper getModelMapper() {
         ModelMapper modelMapper = new ModelMapper();
+        modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
         return modelMapper;
 
     }

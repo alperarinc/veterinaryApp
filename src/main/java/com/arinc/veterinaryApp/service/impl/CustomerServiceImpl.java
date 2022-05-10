@@ -63,10 +63,11 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
 
-    @Override
+
+
+     @Override
     public Boolean delete(Long id) {
-        customerRepository.deleteById(id);
-        return true;
+        return null;
     }
 
 

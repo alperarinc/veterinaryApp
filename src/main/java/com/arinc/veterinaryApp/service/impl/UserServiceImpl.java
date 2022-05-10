@@ -1,5 +1,6 @@
 package com.arinc.veterinaryApp.service.impl;
 
+import com.arinc.veterinaryApp.dto.UserDto;
 import com.arinc.veterinaryApp.entity.User;
 import com.arinc.veterinaryApp.repository.UserRepository;
 import com.arinc.veterinaryApp.service.UserService;
@@ -41,5 +42,15 @@ public class UserServiceImpl implements UserService {
     @Override
     public User getByUsername(String username) {
         return userRepository.findByUsername(username);
+    }
+
+    @Override
+    public Boolean delete(Long id) {
+        return null;
+    }
+
+    @Override
+    public UserDto update(Long id, UserDto user) {
+        return null;
     }
 }
