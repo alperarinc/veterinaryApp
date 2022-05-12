@@ -17,7 +17,6 @@ import java.util.List;
 public class CustomerServiceImpl implements CustomerService {
 
     private final CustomerRepository customerRepository;
-
     private final ModelMapper modelMapper;
 
     public CustomerServiceImpl(CustomerRepository customerRepository, ModelMapper modelMapper) {
@@ -27,12 +26,13 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public CustomerDto save(CustomerDto customer) {
-        if (customer.getCustomerCode() == null) {
-            throw new IllegalArgumentException("ProjectCode cannot be null");
-        }
+
+        Customer customerCheck = customerRepository.getByCustomerCode(customer.getCustomerCode());
+        if (customerCheck != null) throw new IllegalArgumentException("ProjectCode Already Exist");
+
         Customer customerDb = modelMapper.map(customer, Customer.class);
         customerDb = customerRepository.save(customerDb);
-        customer.setId(customer.getId());
+        customer.setId(customerDb.getId());
         return customer;
     }
 

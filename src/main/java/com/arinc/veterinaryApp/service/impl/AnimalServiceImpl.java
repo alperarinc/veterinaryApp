@@ -28,9 +28,7 @@ public class AnimalServiceImpl implements AnimalService {
         if (animal.getName() == null) {throw new IllegalArgumentException("Animal name cannot be null");}
 
         Animal animalEntity = modelMapper.map(animal, Animal.class);
-
         animalEntity = animalRepository.save(animalEntity);
-
         animal.setId(animalEntity.getId());
         return animal;
      }

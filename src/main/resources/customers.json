@@ -1,0 +1,17 @@
+[
+  {
+    "_class":"com.arinc.veterinaryApp.entity.Customer",
+    "customerName":"Alper ARİNÇ",
+    "customerCode":"AA001"
+  },
+  {
+    "_class":"com.arinc.veterinaryApp.entity.Customer",
+    "customerName":"Hakan ARİNÇ",
+    "customerCode":"HA001"
+  },
+  {
+    "_class":"com.arinc.veterinaryApp.entity.Customer",
+    "customerName":"Nihal ARİNÇ",
+    "customerCode":"NA001"
+  }
+]

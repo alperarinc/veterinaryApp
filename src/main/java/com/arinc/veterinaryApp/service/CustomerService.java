@@ -20,8 +20,7 @@ public interface CustomerService {
 
     TPage<CustomerDto> getAllPageable(Pageable pageable);
 
-
-    Boolean delete (Long id);
+    Boolean delete(Long id);
 
     CustomerDto update(Long id, CustomerDto customer);
 

@@ -1,6 +1,5 @@
 package com.arinc.veterinaryApp.dto;
 
-import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
@@ -19,7 +18,6 @@ public class CustomerDto {
     @NotNull
     @ApiModelProperty(required = true,value = "Name Of Customer")
     private String customerName;
-    @NotNull
     @ApiModelProperty(required = true,value = "Code Of Customer")
     private String customerCode;
 
