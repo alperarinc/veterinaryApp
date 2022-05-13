@@ -26,13 +26,13 @@ public class Customer extends BaseEntity{
     @Column(name = "customer_surname",length = 50)
     private String surname;
 
-    @Column(name = "tel_number",length = 10,unique = true)
+    @Column(name = "tel_number",length = 10)
     private String telNumber;
 
     @Column(name = "adress",length = 200)
     private String address;
 
-    @Column(name = "email",length = 50,unique = true)
+    @Column(name = "email",length = 50)
     private String email;
 
     @JoinColumn(name = "manager_user_id")
