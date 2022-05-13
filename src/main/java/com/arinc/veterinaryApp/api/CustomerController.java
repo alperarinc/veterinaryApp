@@ -18,6 +18,7 @@ import javax.validation.Valid;
 @RequestMapping(ApiPaths.CustomerCtrl.CTRL)
 @Api(value = ApiPaths.CustomerCtrl.CTRL,description = "Customer APIs")
 @Slf4j
+@CrossOrigin
 public class CustomerController {
 
     private final CustomerServiceImpl customerServiceImpl;
