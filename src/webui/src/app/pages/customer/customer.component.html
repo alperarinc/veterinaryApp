@@ -1,4 +1,5 @@
 <div class="content-wrapper">
+  <h3>{{'Project List'}}</h3>
   <ngx-datatable
     class="bootstrap"
     [rows]="rows"
@@ -13,5 +14,53 @@
     [limit]="page.size"
     (page)='setPage($event)'>
   </ngx-datatable>
+  <ng-template #tplCustomerDeleteCell let-row = "row" let-value="value">
+    <button (click)="showCustomerDeleteConfirmation(value)"> <i class="material-icons">delete</i></button>
+
+  </ng-template>
+
+  <div>
+   <!-- <button type="button" class="btn btn-primary" (click)="showDeleteConfirmation()">{{'Confirm'}}</button>-->
+    <button type="button" class="btn btn-primary" (click)="openModal(template)">{{'New Customer'}}</button>
+  </div>
+  <ng-template #template>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">{{'Customer Detail'}}</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+    </div>
+    <form [formGroup]="customerForm" (ngSubmit)="saveProject()">
+
+      <div class="form-group">
+        <label>{{'Customer Code'}}</label>
+
+        <input type="text" formControlName="customerCode" class="form-control"
+               [ngClass]="{ 'is-invalid': f.customerCode.errors }"/>
+        <div *ngIf="f.customerCode.errors" class="invalid-feedback">
+          <div *ngIf="f.customerCode.errors.required">{{'Customer Code is required'}}</div>
+          <div *ngIf="f.customerCode.errors.minlength">{{'Customer Code should be (min) 2 char'}}</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>{{'Customer Name'}}</label>
+
+        <input type="text" formControlName="customerName" class="form-control"
+               [ngClass]="{ 'is-invalid': f.customerName.errors }"/>
+        <div *ngIf="f.customerName.errors" class="invalid-feedback">
+          <div *ngIf="f.customerName.errors.required">{{'Customer Name is required'}}</div>
+          <div *ngIf="f.customerName.errors.minlength">{{'Customer Name should be (min) 4 char'}}</div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-light" (click)="closeAndResetModal()">{{'Close'}}</button>
+        <button class="btn btn-primary">{{'Save'}}</button>
+      </div>
+    </form>
+    </ng-template>
 </div>
 

@@ -4,6 +4,8 @@ import { CustomerComponent } from './customer.component';
 import {CustomerRoutingModule} from "./customer.routing.module";
 import {CustomerService} from "../../services/shared/customer.service";
 import {NgxDatatableModule} from "@swimlane/ngx-datatable";
+import {SharedModule} from "../../shared/shared.module";
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [CustomerComponent],
@@ -11,7 +13,10 @@ import {NgxDatatableModule} from "@swimlane/ngx-datatable";
   imports: [
     CommonModule,
     CustomerRoutingModule,
-    NgxDatatableModule
+    NgxDatatableModule,
+    SharedModule,
+    ReactiveFormsModule
+
   ],
 
 })

@@ -54,7 +54,7 @@ export class CustomerService {
   }
 
   delete(id): Observable<any> {
-    return this.apiService.delete( this.CUSTOMER_PATH,id).pipe(map(
+    return this.apiService.delete( this.CUSTOMER_PATH + '/' +id).pipe(map(
       res => {
         if (res) {
           return res
