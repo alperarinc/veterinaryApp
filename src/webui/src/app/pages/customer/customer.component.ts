@@ -4,7 +4,7 @@ import {Page} from "../../common/page";
 import {BsModalRef, BsModalService} from "ngx-bootstrap";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {ConfirmationComponent} from "../../shared/confirmation/confirmation.component";
-import {template} from "@angular/core/src/render3";
+import {UserService} from "../../services/shared/user.service";
 
 @Component({
   selector: 'app-customer',
@@ -21,8 +21,12 @@ export class CustomerComponent implements OnInit {
   page = new Page();
   cols = [];
   rows = [];
+  managerOptions = [];
 
-  constructor(private customerService: CustomerService, private modalService: BsModalService, private formBuilder: FormBuilder) {
+  constructor(private customerService: CustomerService,
+              private modalService: BsModalService,
+              private formBuilder: FormBuilder,
+              private userService: UserService) {
   }
 
   openModal(template: TemplateRef<any>) {
@@ -34,7 +38,17 @@ export class CustomerComponent implements OnInit {
     this.customerForm = this.formBuilder.group({
       'customerCode': [null, [Validators.required, Validators.minLength(2), Validators.maxLength(10)]],
       'customerName': [null, [Validators.required, Validators.minLength(4)]],
+      'customerSurname': [null, [Validators.required, Validators.minLength(4)]],
+      'telNumber': [null, [Validators.required, Validators.minLength(11), Validators.maxLength(11)]],
+      'address': [null, [Validators.required, Validators.minLength(10), Validators.maxLength(50)]],
+      'email': [null, [Validators.required, Validators.minLength(10), Validators.maxLength(20)]],
+      'managerId': [null, [Validators.required]]
+      ,
     });
+    this.userService.getAll().subscribe(res => {
+      this.managerOptions = res;
+      console.log(res);
+    })
   }
 
   get f() {
@@ -46,7 +60,12 @@ export class CustomerComponent implements OnInit {
     this.cols = [
       {prop: 'id', name: 'No'},
       {prop: 'customerName', name: 'Customer Name', sortable: false},
+      {prop: 'customerSurname', name: 'Customer Surname', sortable: false},
       {prop: 'customerCode', name: 'Customer Code', sortable: false},
+      {prop: 'telNumber', name: 'Customer Phone', sortable: false},
+      {prop: 'address', name: 'Customer Address', sortable: false},
+      {prop: 'email', name: 'Customer E-mail', sortable: false},
+      {prop: 'manager.username', name: 'Manager', sortable: false},
       {prop: 'id', name: 'Actions', cellTemplate: this.tplCustomerDeleteCell, flexGrow: 1, sortable: false}
     ];
 
@@ -59,17 +78,16 @@ export class CustomerComponent implements OnInit {
     });
   }
 
-  saveProject() {
+  saveCustomer() {
     if (!this.customerForm.valid)
       return;
 
-    this.customerService.CreateProject(this.customerForm.value).subscribe(
+    this.customerService.CreateCustomer(this.customerForm.value).subscribe(
       response => {
-        console.log(response)
-      }
+        this.setPage({offset: 0});
+        this.closeAndResetModal();      }
     )
-    this.setPage({offset: 0});
-    this.closeAndResetModal();
+
   }
 
   closeAndResetModal() {
@@ -77,20 +95,6 @@ export class CustomerComponent implements OnInit {
     this.modalRef.hide();
   }
 
-  showDeleteConfirmation() {
-    const modal = this.modalService.show(ConfirmationComponent);
-    (<ConfirmationComponent>modal.content).showConfirmation(
-      'Test Modal',
-      'Test Body'
-    );
-    (<ConfirmationComponent>modal.content).onClose.subscribe(result => {
-      if (result === true) {
-        console.log("Yes")
-      } else if (result === false) {
-        console.log("No")
-      }
-    })
-  }
 
   showCustomerDeleteConfirmation(value): void {
     const modal = this.modalService.show(ConfirmationComponent);

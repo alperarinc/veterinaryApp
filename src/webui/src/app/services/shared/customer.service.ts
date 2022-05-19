@@ -17,7 +17,18 @@ export class CustomerService {
         if (res) {
           return res
         } else {
-          console.log(res);
+          return {};
+        }
+      }
+
+    ));
+  }
+  getAllId(): Observable<any> {
+    return this.apiService.get( this.CUSTOMER_PATH ).pipe(map(
+      res => {
+        if (res) {
+          return res
+        } else {
           return {};
         }
       }
@@ -39,7 +50,7 @@ export class CustomerService {
     ));
   }
 
-  CreateProject(customer): Observable<any> {
+  CreateCustomer(customer): Observable<any> {
     return this.apiService.post( this.CUSTOMER_PATH,customer).pipe(map(
       res => {
         if (res) {
@@ -53,17 +64,16 @@ export class CustomerService {
     ));
   }
 
-  delete(id): Observable<any> {
-    return this.apiService.delete( this.CUSTOMER_PATH + '/' +id).pipe(map(
-      res => {
-        if (res) {
-          return res
-        } else {
+  delete(id) : Observable<any>{
+    return this.apiService.delete(this.CUSTOMER_PATH +'/'+id).pipe(map(
+      res =>{
+        if(res){
+          return res;
+        }else{
           console.log(res);
           return {};
         }
       }
-
     ));
   }
 

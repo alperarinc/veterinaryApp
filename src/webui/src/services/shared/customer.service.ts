@@ -39,7 +39,7 @@ export class CustomerService {
         ));
     }
 
-    CreateProject(project): Observable<any> {
+    CreateCustomer(project): Observable<any> {
         return this.apiService.post( this.CUSTOMER_PATH,project).pipe(map(
             res => {
                 if (res) {

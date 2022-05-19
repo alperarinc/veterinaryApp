@@ -24,9 +24,9 @@ public class Customer extends BaseEntity{
     private String customerName;
 
     @Column(name = "customer_surname",length = 50)
-    private String surname;
+    private String customerSurname;
 
-    @Column(name = "tel_number",length = 10)
+    @Column(name = "tel_number",length = 11)
     private String telNumber;
 
     @Column(name = "adress",length = 200)
@@ -38,4 +38,6 @@ public class Customer extends BaseEntity{
     @JoinColumn(name = "manager_user_id")
     @ManyToOne(optional = true, fetch = FetchType.LAZY)
     private User manager;
+
+
 }

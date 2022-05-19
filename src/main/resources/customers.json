@@ -10,8 +10,27 @@
     "customerCode":"HA001"
   },
   {
-    "_class":"com.arinc.veterinaryApp.entity.Customer",
-    "customerName":"Nihal ARİNÇ",
-    "customerCode":"NA001"
+    "_class":"com.arinc.veterinaryApp.entity.User",
+    "name":"Nihal",
+    "surname":"ARİNÇ",
+    "username":"NARINC",
+    "email": "nihalarinc@veterinaryapp.com"
+  },
+  {
+    "_class":"com.arinc.veterinaryApp.entity.User",
+    "name":"Alper",
+    "surname":"ARİNÇ",
+    "username":"AARINC",
+    "email": "alperarinc@veterinaryapp.com"
+  },
+  {
+    "_class":"com.arinc.veterinaryApp.entity.Animal",
+    "type":"Köpek",
+    "gender":"MALE",
+    "name":"KARABAŞ",
+    "description": "mawsdasdasdasdasdqweqeqw",
+    "assignee.Surname": "hakanarinc@veterinaryapp.com",
+    "customer.customerName": "hakanarinc@veterinaryapp.com",
+    "customer.manager.surname": "hakanarinc@veterinaryapp.com"
   }
 ]

@@ -13,6 +13,11 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
 import { NgxDatatableModule } from "@swimlane/ngx-datatable";
 import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
 import {TranslateHttpLoader} from "@ngx-translate/http-loader";
+import {CustomerService} from "./services/shared/customer.service";
+import {UserService} from "./services/shared/user.service";
+import {AnimalService} from "./services/shared/animal.service";
+import {NotfoundComponent} from "./shared/notfound/notfound.component";
+import {AnimalHistoryService} from "./services/shared/animalHistory.service";
 
 export const createTranslateLoader =(http: HttpClient) => {
   return new TranslateHttpLoader(http, './assent/i18n/','.json');
@@ -24,7 +29,8 @@ export const createTranslateLoader =(http: HttpClient) => {
     AppLayoutComponent,
     FooterComponent,
     HeaderComponent,
-    SidebarComponent
+    SidebarComponent,
+    NotfoundComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +56,7 @@ export const createTranslateLoader =(http: HttpClient) => {
       }
     })
   ],
-  providers: [ApiService],
+  providers: [ApiService,CustomerService,UserService,AnimalService,AnimalHistoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

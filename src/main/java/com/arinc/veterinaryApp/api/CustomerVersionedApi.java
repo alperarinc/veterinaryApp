@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(ApiPaths.CustomerCtrl.CTRL)
-@Api(value = ApiPaths.CustomerCtrl.CTRL,description = "Customer APIs")
+@Api(value = ApiPaths.CustomerCtrl.CTRL, description = "Customer APIs")
 public class CustomerVersionedApi {
 
     @Autowired
@@ -26,17 +26,16 @@ public class CustomerVersionedApi {
 
     @GetMapping(value = "/{id}", params = "version=1")
     @ApiOperation(value = "Get By ID Operation v1", response = CustomerDto.class)
-    public ResponseEntity<CustomerDto> getByIdv1(@PathVariable(value = "id",required = true)Long id) {
+    public ResponseEntity<CustomerDto> getByIdv1(@PathVariable(value = "id", required = true) Long id) {
 
         CustomerDto customerDto = customerServiceImpl.getById(id);
         return ResponseEntity.ok(customerDto);
-
 
     }
 
     @GetMapping(value = "/{id}", params = "version=2")
     @ApiOperation(value = "Get By ID Operation v2", response = CustomerDto.class)
-    public ResponseEntity<CustomerDto> getByIdv2(@PathVariable (value = "id",required = true)Long id) {
+    public ResponseEntity<CustomerDto> getByIdv2(@PathVariable(value = "id", required = true) Long id) {
         CustomerDto customerDto = customerServiceImpl.getById(id);
         return ResponseEntity.ok(customerDto);
     }

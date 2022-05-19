@@ -23,7 +23,7 @@ public class VeterinaryAppApplication {
         modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
         return modelMapper;
     }
-  /*  @Bean
+ /*   @Bean
     public Jackson2RepositoryPopulatorFactoryBean repositoryPopulator(){
         Jackson2RepositoryPopulatorFactoryBean factory = new Jackson2RepositoryPopulatorFactoryBean();
         factory.setResources(new Resource[] {new ClassPathResource("customers.json")});

@@ -39,8 +39,8 @@ export class AnimalService {
         ));
     }
 
-    CreateAnimal(animal): Observable<any> {
-        return this.apiService.post( this.ANIMAL_PATH,animal).pipe(map(
+    CreateIssue(issue): Observable<any> {
+        return this.apiService.post( this.ANIMAL_PATH,issue).pipe(map(
             res => {
                 if (res) {
                     return res

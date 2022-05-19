@@ -16,8 +16,7 @@ import {ReactiveFormsModule} from "@angular/forms";
     NgxDatatableModule,
     SharedModule,
     ReactiveFormsModule
-
-  ],
+  ]
 
 })
 export class CustomerModule { }

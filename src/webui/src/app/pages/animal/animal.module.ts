@@ -4,14 +4,17 @@ import { AnimalComponent } from './animal.component';
 import {AnimalRoutingModule} from "./animal.routing.module";
 import {AnimalService} from "../../services/shared/animal.service";
 import {SharedModule} from "../../shared/shared.module";
+import {NgxDatatableModule} from "@swimlane/ngx-datatable";
+import {AnimalDetailComponent} from "./animal-detail/animal-detail.component";
 
 @NgModule({
-  declarations: [AnimalComponent],
+  declarations: [AnimalComponent,AnimalDetailComponent],
   providers:[AnimalService],
-  imports: [
-    CommonModule,
-    AnimalRoutingModule,
-    SharedModule
-  ]
+    imports: [
+        CommonModule,
+        AnimalRoutingModule,
+        SharedModule,
+        NgxDatatableModule
+    ]
 })
 export class AnimalModule { }

@@ -3,16 +3,18 @@ import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
 import { ApiService } from "../api.service";
 
-@Injectable()
-export class AnimalService {
-    private ANIMAL_PATH = "/animal";
+@Injectable({
+  providedIn:'root'
+})
+export class UserService {
+    private USER_PATH = "/user";
 
     constructor(private apiService: ApiService) {
 
     }
 
     getAll(): Observable<any> {
-        return this.apiService.get( this.ANIMAL_PATH).pipe(map(
+        return this.apiService.get( this.USER_PATH).pipe(map(
             res => {
                 if (res) {
                     return res
@@ -26,7 +28,7 @@ export class AnimalService {
     }
 
     getById(id): Observable<any> {
-        return this.apiService.get( this.ANIMAL_PATH,id).pipe(map(
+        return this.apiService.get( this.USER_PATH,id).pipe(map(
             res => {
                 if (res) {
                     return res
@@ -39,8 +41,8 @@ export class AnimalService {
         ));
     }
 
-    CreateAnimal(animal): Observable<any> {
-        return this.apiService.post( this.ANIMAL_PATH,animal).pipe(map(
+    CreateUser(user): Observable<any> {
+        return this.apiService.post( this.USER_PATH,user).pipe(map(
             res => {
                 if (res) {
                     return res
@@ -52,19 +54,4 @@ export class AnimalService {
 
         ));
     }
-
-    delete(id): Observable<any> {
-        return this.apiService.delete( this.ANIMAL_PATH,id).pipe(map(
-            res => {
-                if (res) {
-                    return res
-                } else {
-                    console.log(res);
-                    return {};
-                }
-            }
-
-        ));
-    }
-
 }

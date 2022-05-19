@@ -4,16 +4,15 @@ import { map } from "rxjs/operators";
 import { ApiService } from "../api.service";
 
 @Injectable()
-export class AnimalService {
-  private ANIMAL_PATH = "/animal";
-  private ANIMAL_GET_BY_ID_DETAILS =this.ANIMAL_PATH + "/detail/"
+export class AnimalHistoryService {
+  private ANIMAL_HISTORY_PATH = "/animal/history";
 
   constructor(private apiService: ApiService) {
 
   }
 
-  getAll(page): Observable<any> {
-    return this.apiService.get( this.ANIMAL_PATH+ '/pagination',page).pipe(map(
+  getAll(): Observable<any> {
+    return this.apiService.get( this.ANIMAL_HISTORY_PATH).pipe(map(
       res => {
         if (res) {
           return res
@@ -27,7 +26,7 @@ export class AnimalService {
   }
 
   getById(id): Observable<any> {
-    return this.apiService.get( this.ANIMAL_PATH,id).pipe(map(
+    return this.apiService.get( this.ANIMAL_HISTORY_PATH,id).pipe(map(
       res => {
         if (res) {
           return res
@@ -40,8 +39,8 @@ export class AnimalService {
     ));
   }
 
-  CreateAnimal(animal): Observable<any> {
-    return this.apiService.post( this.ANIMAL_PATH,animal).pipe(map(
+  CreateIssue(animal): Observable<any> {
+    return this.apiService.post( this.ANIMAL_HISTORY_PATH,animal).pipe(map(
       res => {
         if (res) {
           return res
@@ -55,7 +54,7 @@ export class AnimalService {
   }
 
   delete(id): Observable<any> {
-    return this.apiService.delete( this.ANIMAL_PATH,id).pipe(map(
+    return this.apiService.delete( this.ANIMAL_HISTORY_PATH,id).pipe(map(
       res => {
         if (res) {
           return res
@@ -66,19 +65,10 @@ export class AnimalService {
       }
 
     ));
+
+  }
+  getAllAnimalHistory(){
+    //TODO
   }
 
-  getByIdWithDetails(id: number) {
-    return this.apiService.get( this.ANIMAL_GET_BY_ID_DETAILS +id).pipe(map(
-      res => {
-        if (res) {
-          return res
-        } else {
-          console.log(res);
-          return {};
-        }
-      }
-
-    ));
-  }
 }

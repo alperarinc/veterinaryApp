@@ -1,1 +1,32 @@
-<div class ="content-wrapper">Animals </div>
+<div class="content-wrapper">
+  <h3>{{'Animal List'}}</h3>
+  <ngx-datatable
+    class="bootstrap"
+    [rows]="rows"
+    [columnMode]="'force'"
+    [headerHeight]="50"
+    [footerHeight]="50"
+    [rowHeight]="'auto'"
+    [externalPaging]="true"
+    [count]="page.totalElements"
+    [offset]="page.page"
+    [limit]="page.size"
+    (page)='setPage($event)'>
+
+    <ngx-datatable-column prop="id" name="No" sortable="false"></ngx-datatable-column>
+    <ngx-datatable-column prop="type" name="Type" sortable="false"></ngx-datatable-column>
+    <ngx-datatable-column prop="gender" name="Gender" sortable="false"></ngx-datatable-column>
+    <ngx-datatable-column prop="name" name="Animal Name" sortable="false"></ngx-datatable-column>
+    <ngx-datatable-column prop="age" name="Age" sortable="false"></ngx-datatable-column>
+    <ngx-datatable-column prop="description" name="Description" sortable="false"></ngx-datatable-column>
+    <ngx-datatable-column prop="assignee.Surname" name="Assignee" sortable="false"></ngx-datatable-column>
+    <ngx-datatable-column prop="customer.customerName" name="Customer" sortable="false"></ngx-datatable-column>
+    <ngx-datatable-column prop="customer.manager.surname" name="Customer Manager" sortable="false"></ngx-datatable-column>
+    <ngx-datatable-column prop="id" name="Actions" sortable="false">
+      <ng-template let-value="value" ngx-datatable-cell-template>
+
+        <a [routerLink]="['animail-detail/', value]">Detail</a>
+      </ng-template>
+    </ngx-datatable-column>
+  </ngx-datatable>
+</div>
